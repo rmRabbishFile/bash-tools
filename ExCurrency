@@ -1,0 +1,4 @@
+#!/bin/bash
+
+watch -n 180 -t -c ~/InCase/ticker.sh USDCNY=X GBPCNY=X EURCNY=X USDEUR=X GBPEUR=X CL=F GC=F 000001.SS
+

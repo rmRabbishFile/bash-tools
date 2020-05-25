@@ -1,0 +1,4 @@
+#!/bin/bash
+
+watch -n 5 -t -c ~/InCase/ticker.sh AAPL TSLA BILI SBUX ^IXIC EZJ.L RDSA.AS AIR.PA VOW3.DE LHA.DE ^GDAXI 
+

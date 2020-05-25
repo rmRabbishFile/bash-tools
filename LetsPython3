@@ -1,0 +1,4 @@
+#!/bin/bash
+
+source /home/c7031195/Programming/python3/env/bin/activate
+

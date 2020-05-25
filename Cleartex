@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm *.aux *.bbl *.log *.blg *x.gz *.out *.ps *.dvi
+
+
