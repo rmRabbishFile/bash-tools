@@ -10,8 +10,8 @@ if ! xdotool --help &>/dev/null; then
     exit 1
 fi
 
-load_wait_time=3
-save_wait_time=3.5
+load_wait_time=3.8
+save_wait_time=3
 scriptname="$(basename "$0")"
 destination="."
 browser="firefox"
@@ -146,7 +146,7 @@ if [[ ! "${browser_wid}" =~ ${wid_re} ]]; then
     printf "ERROR: Unable to find X-server window id for browser.\n" >&2
     exit 1
 fi
-
+xdotool windowactivate "${browser_wid}" key Page_Down
 # Activate the ${browser} window, and "press" ctrl+s
 xdotool windowactivate "${browser_wid}" key --clearmodifiers "ctrl+s"
 
@@ -223,6 +223,12 @@ printf "INFO: Saving web page ...\n" >&2
 # Wait for the file to be completely saved
 sleep ${save_wait_time}
 
+# Check the values in the tesco files
+DIR=$(dirname "${destination}")
+python "${DIR}/"tesco-slot.py $destination
+if [ $? -eq 1 ];then
+		exit 0
+fi
 
 # Close the browser tab/window (Ctrl+w for KDE, Ctrl+F4 otherwise)
 if [[ "${is_kde}" -eq 1 ]]; then
@@ -231,11 +237,6 @@ else
     xdotool windowactivate "${browser_wid}" key --clearmodifiers "ctrl+F4"
 fi
 
-# Check the values in the tesco files
-DIR=$(dirname "${destination}")
-python "${DIR}/"tesco-slot.py $destination
-if [ $? -eq 1 ];then
-		exit 0
-fi
+
 
 printf "INFO: Done!\n">&2

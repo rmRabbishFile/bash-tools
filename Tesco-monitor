@@ -1,4 +1,4 @@
 #!/bin/bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-echo $DIR
-watch -n 1000 -t -c $DIR/tesco-parts/tesco-auto $DIR/tesco-parts
+#echo $DIR
+watch -n 600 -t -c $DIR/tesco-parts/tesco-auto $DIR/tesco-parts

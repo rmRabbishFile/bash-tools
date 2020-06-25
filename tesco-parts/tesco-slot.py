@@ -12,11 +12,11 @@ import sys
 root = tk.Tk()
 root.withdraw()
 keep = 0
-min_price = 3 # GBP
+min_price = 3.5 # GBP
 neglect = 7 # 15:00 - 16:00
 results = 0
 ## Input, the full path of the buffer html file
-print(sys.argv[1])
+#print(sys.argv[1])
 pagename = sys.argv[1]
 with open(pagename, 'r') as pagefile:
     all_data = pagefile.read()
@@ -27,7 +27,7 @@ try:
 except:
     print("Check round finished at", datetime.now(),". In total", results, "slots avalable.")
     sys.exit(keep)
-       
+
 
 df = tables[0]
 key = "£"
@@ -41,6 +41,7 @@ masknp = mask.to_numpy()
 found = np.argwhere(masknp)
 results = found.shape[0]
 # Check whether there are slots below a set price
+print("Looking for slots as low as", min_price)
 for row, col in found:
     info = df.iloc[row][col]
     if(row > neglect):
