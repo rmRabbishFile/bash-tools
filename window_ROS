@@ -1,0 +1,5 @@
+@echo off
+echo Setting up ROS Environment...
+set ROS_MASTER_URI=http://192.168.0.104:11311/
+call C:\opt\ros\noetic\x64\setup.bat
+echo ROS Environment setup complete.
