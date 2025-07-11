@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Define the paths to your HTML files.
-M_BASE="/home/xz/Videos/2023 Long-term summary.html"
+M_BASE="/home/xz/Videos/2025 Long-term summary.html"
 W_FILE="/home/xz/Videos/weekly Summary_ Always set a number of STEPS.html"
-D_FILE="/home/xz/Videos/Daily Summary 2023.html"
+D_FILE="/home/xz/Videos/Daily Summary 2025.html"
 
 # Extract the current month.
 MONTH=$(date +"%m")
